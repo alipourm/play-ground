@@ -5,14 +5,19 @@ have a set of magic numbers that they claim it perform great. Here I want to rep
 permutation testing and heavy random testing cannot find.
 */
 
-void find(int* A, int N, int F){
- 
-  int M, NS, R, I, J,W;
+#include "util.c"
+
+void find(int* A, int F, int N){
+  int M = 0, NS = 0, R = 0, I = 0, J = 0,W = 0;
+  /* NOTE: A[0] is a dummy element to keep the code consistent with 
+     the original code.
+   */
+  N = N -1;
   M = 1;
   NS = N;
+  
  l10: if(M >= NS)
     goto l1000;
-  printf("%d", M);
   R = A[F];
   I = M;
   J = NS;
@@ -36,5 +41,6 @@ void find(int* A, int N, int F){
  l70: if (I > F) goto l1000;
   M = I;
   goto l10;
- l1000:;
+ l1000:
+  return;
 }
